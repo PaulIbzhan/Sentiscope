@@ -26,6 +26,6 @@ def analyze_comment_sensitivity(comment, api_key):
             print("This comment is not considered sensitive.")
     else:
         print("Failed to analyze comment sensitivity.")
-api_key = 'AIzaSyBNq734U4_QvcRoFi73Z3usULIcur0efe8'
+api_key = 'Enter Api key here'
 comment_to_analyze = input("Enter the comment to analyze: ")
 analyze_comment_sensitivity(comment_to_analyze, api_key)
