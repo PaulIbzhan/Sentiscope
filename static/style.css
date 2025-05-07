@@ -1,0 +1,42 @@
+:root {
+  --bg: #f0f2f5;
+  --card-bg: #fff;
+  --accent: #3897f0;
+  --text: #262626;
+  --gray: #8e8e8e;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
+.container { display: grid; grid-template-columns: 200px 1fr 300px; height: 100vh; }
+.sidebar { background: var(--card-bg); padding: 20px; border-right: 1px solid #ddd; }
+.logo { font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem; }
+.nav-list li { list-style: none; padding: 12px; border-radius: 8px; cursor: pointer; }
+.nav-list li.active, .nav-list li:hover { background: var(--bg); }
+.feed { padding: 20px; overflow-y: auto; }
+.card { background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px; padding: 16px; transition: transform .2s; }
+.card:hover { transform: translateY(-4px); }
+.card img { width: 100%; border-radius: 8px; margin-bottom: 12px; }
+.comments { max-height: 150px; overflow-y: auto; margin-bottom: 12px; }
+.comment { display: flex; justify-content: space-between; align-items: center; padding: 8px; border-radius: 6px; margin-bottom: 6px; font-size: 0.9rem; }
+.comment.negative { background: #f8d7da; }
+.comment.mildly-negative { background: #fbe5e7; }
+.comment.highly-negative { background: #f5c6cb; }
+.comment.neutral { background: #fff3cd; }
+.comment.mildly-positive { background: #e6f4ea; }
+.comment.positive { background: #d4edda; }
+.comment.highly-positive { background: #c3e6cb; }
+.comment.tmi { background: #ffecb3; }
+.comment.lewd { background: #e1bee7; }
+.comment button { background: transparent; border: none; cursor: pointer; color: var(--gray); }
+.input-area { display: flex; gap: 8px; }
+.input-area input { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
+.input-area button { padding: 8px 16px; border: none; background: var(--accent); color: #fff; border-radius: 6px; cursor: pointer; }
+.right-panel { background: var(--card-bg); padding: 20px; border-left: 1px solid #ddd; overflow-y: auto; }
+.controls, .bulk-delete { margin-top: 20px; }
+.controls h2, .bulk-delete h2 { margin-bottom: 10px; }
+.checkbox-group label { display: block; margin-bottom: 8px; cursor: pointer; }
+#applySettings, .bulk-btn { width: 100%; padding: 10px; border: none; background: var(--accent); color: #fff; border-radius: 6px; cursor: pointer; margin-bottom: 8px; }
+.bulk-btn:nth-child(2) { background: #ffab00; }
+.bulk-btn:nth-child(3) { background: #d500f9; }
+.chart-container { text-align: center; }
+.chart-container canvas { max-width: 100%; margin-top: 10px; }

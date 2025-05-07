@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Instagram Clone</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <h1 class="logo">InstaClone</h1>
+      <ul class="nav-list">
+        <li data-action="home" class="active">🏠 Home</li>
+        <li data-action="search">🔍 Search</li>
+        <li data-action="notifications">❤️ Notifications</li>
+        <li data-action="profile">👤 Profile</li>
+      </ul>
+    </nav>
+
+    <!-- Main Feed -->
+    <main class="feed" id="feed"></main>
+
+    <!-- Right Control Panel -->
+    <aside class="right-panel">
+      <section class="chart-container">
+        <h2>Sentiment Breakdown</h2>
+        <canvas id="sentimentChart"></canvas>
+      </section>
+
+      <section class="controls">
+        <h2>Auto-Delete</h2>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="Negative" class="auto-delete"> Negative</label>
+          <label><input type="checkbox" value="TMI" class="auto-delete"> TMI</label>
+          <label><input type="checkbox" value="Lewd" class="auto-delete"> Lewd</label>
+        </div>
+        <button id="applySettings">Apply</button>
+      </section>
+
+      <section class="bulk-delete">
+        <h2>Bulk Delete</h2>
+        <button data-type="Negative" class="bulk-btn">All Negative</button>
+        <button data-type="TMI" class="bulk-btn">All TMI</button>
+        <button data-type="Lewd" class="bulk-btn">All Lewd</button>
+
+        <!-- Export buttons -->
+        <h2>Export Data</h2>
+        <button id="exportCsv" class="export-btn">Export CSV</button>
+      </section>
+    </aside>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
